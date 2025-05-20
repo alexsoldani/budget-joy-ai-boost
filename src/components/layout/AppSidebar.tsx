@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Sidebar,
@@ -23,6 +22,11 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Map,
+  Shield,
+  TrendingUp,
+  Heart,
+  Bot,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/components/ui/sidebar";
@@ -35,10 +39,15 @@ export function AppSidebar() {
     { name: "Dashboard", path: "/", icon: Home },
     { name: "Expenses", path: "/expenses", icon: PiggyBank },
     { name: "Budget", path: "/budget", icon: BarChart },
+    { name: "Financial Map", path: "/financial-map", icon: Map },
+    { name: "Mood Tracker", path: "/mood-tracker", icon: Heart },
+    { name: "Challenges", path: "/challenges", icon: Shield },
+    { name: "Rankings", path: "/rankings", icon: TrendingUp },
     { name: "Reports", path: "/reports", icon: PieChart },
     { name: "Goals", path: "/goals", icon: Award },
     { name: "Calendar", path: "/calendar", icon: Calendar },
     { name: "Social", path: "/social", icon: Users },
+    { name: "Negotiation Bot", path: "/negotiation-bot", icon: Bot },
   ];
 
   return (

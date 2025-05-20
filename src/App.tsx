@@ -7,6 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppLayout from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import FinancialMap from "./pages/FinancialMap";
+import MoodTracker from "./pages/MoodTracker";
+import Challenges from "./pages/Challenges";
+import Rankings from "./pages/Rankings";
+import NegotiationBot from "./pages/NegotiationBot";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +26,11 @@ const App = () => (
             <Route index element={<Dashboard />} />
             <Route path="expenses" element={<Dashboard />} />
             <Route path="budget" element={<Dashboard />} />
+            <Route path="financial-map" element={<FinancialMap />} />
+            <Route path="mood-tracker" element={<MoodTracker />} />
+            <Route path="challenges" element={<Challenges />} />
+            <Route path="rankings" element={<Rankings />} />
+            <Route path="negotiation-bot" element={<NegotiationBot />} />
             <Route path="reports" element={<Dashboard />} />
             <Route path="goals" element={<Dashboard />} />
             <Route path="calendar" element={<Dashboard />} />
