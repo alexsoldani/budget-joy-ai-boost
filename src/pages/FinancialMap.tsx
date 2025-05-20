@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { AlertTriangle, Flag, TreeDeciduous, Briefcase, Home, Sailboat, Target, Info } from "lucide-react";
+import { AlertTriangle, Flag, TreeDeciduous, Briefcase, Home, Sailboat, Target, Info, Award } from "lucide-react";
 
 export default function FinancialMap() {
   const [activeZone, setActiveZone] = useState("current");
@@ -113,9 +113,14 @@ export default function FinancialMap() {
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-medium flex items-center gap-2">
-                  {zones[activeZone as keyof typeof zones].icon && 
-                    <zones[activeZone as keyof typeof zones].icon className="h-5 w-5" />
-                  }
+                  {zones[activeZone as keyof typeof zones].icon && (
+                    <div>
+                      {(() => {
+                        const IconComponent = zones[activeZone as keyof typeof zones].icon;
+                        return <IconComponent className="h-5 w-5" />;
+                      })()}
+                    </div>
+                  )}
                   {zones[activeZone as keyof typeof zones].name}
                 </h3>
                 <div className="mt-1 bg-gray-200 rounded-full h-2.5">
