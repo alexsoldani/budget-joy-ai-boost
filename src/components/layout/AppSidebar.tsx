@@ -38,7 +38,7 @@ export function AppSidebar() {
   ];
 
   return (
-    <Sidebar expanded={expanded} onExpandedChange={setExpanded} className="border-r">
+    <Sidebar className="border-r">
       <SidebarHeader className="py-6">
         <div className="flex items-center px-4">
           <div className="flex items-center gap-2 font-bold text-2xl text-budgetjoy-purple">
