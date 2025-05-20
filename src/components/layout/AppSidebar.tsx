@@ -21,11 +21,15 @@ import {
   Award,
   Settings,
   LogOut,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useSidebar } from "@/components/ui/sidebar";
 
 export function AppSidebar() {
-  const [expanded, setExpanded] = useState(true);
+  const { state } = useSidebar();
+  const expanded = state === "expanded";
 
   const mainMenuItems = [
     { name: "Dashboard", path: "/", icon: Home },
@@ -49,9 +53,9 @@ export function AppSidebar() {
             )}
             {!expanded && <span>BJ</span>}
           </div>
-          <SidebarTrigger asChild>
+          <SidebarTrigger>
             <button className="ml-auto p-2 rounded-full hover:bg-gray-100">
-              {expanded ? "←" : "→"}
+              {expanded ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
             </button>
           </SidebarTrigger>
         </div>
